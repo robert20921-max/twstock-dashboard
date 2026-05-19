@@ -10,40 +10,28 @@ HEADERS = {"Authorization": f"Bearer {FINMIND_TOKEN}"} if FINMIND_TOKEN else {}
 FM = "https://api.finmindtrade.com/api/v4/data"
 
 WATCH = {
-    # 一、AI伺服器與ODM代工
     "2317":"鴻海","3231":"緯創","6669":"緯穎","2382":"廣達","2356":"英業達",
     "2324":"仁寶","3706":"神達","4938":"和碩","2352":"佳世達","2395":"研華",
-    # 二、半導體先進製程與晶圓代工
     "2330":"台積電","2303":"聯電","5347":"世界","6770":"力積電","3661":"世芯-KY",
     "3443":"創意","6533":"智原","6643":"M31","3529":"力旺","8027":"鈦昇",
-    # 三、先進封裝CoWoS與後段測試
     "3711":"日月光投控","6239":"力成","2449":"京元電子","3264":"欣銓","6223":"旺矽",
     "6515":"穎崴","6271":"同欣電","8150":"南茂","8110":"華東","3374":"精材",
-    # 四、半導體建廠與設備/化學材料
     "3131":"弘塑","3583":"辛耘","6187":"萬潤","2404":"漢唐","3413":"京鼎",
     "6788":"華景電","5498":"凱崴","1815":"富喬","8021":"尖點","4755":"三福化",
-    # 五、散熱模組與液冷供應鏈
     "3017":"奇鋐","3324":"雙鴻","3653":"健策","2421":"建準","6805":"富世達",
     "3023":"信邦","3338":"泰碩","6230":"超眾","1597":"直得","4545":"銘鈺",
-    # 六、伺服器零組件與滑軌/機殼
     "2059":"川湖","8210":"勤誠","5215":"科嘉-KY","3533":"嘉澤","3005":"神基",
     "2474":"可成","6117":"迎廣","3694":"大瀚","3013":"晟銘電","5289":"宜鼎",
-    # 七、高階CCL銅箔基板與PCB載板
     "2383":"台光電","6274":"台燿","2368":"金像電","8046":"南電","3037":"欣興",
     "3189":"景碩","2316":"楠梓電","2367":"燿華","5439":"高僑","4958":"臻鼎-KY",
-    # 八、記憶體與DRAM產業鏈
     "2344":"華邦電","2408":"南亞科","3006":"晶豪科","8299":"群聯","2337":"旺宏",
     "3260":"威剛","4967":"十銓","2451":"創見","8088":"品安","3051":"力特",
-    # 九、光通訊與CPO新技術族群
     "3081":"聯亞","4979":"華星光","3163":"波若威","3363":"上詮","4908":"前鼎",
     "6426":"統新","6442":"光聖","3450":"聯鈞","4977":"眾達-KY","2455":"全新",
-    # 十、電力管理與綠能基礎設施
     "2308":"台達電","2301":"光寶科","1503":"士電","1513":"中興電","1519":"華城",
     "1514":"亞力","6806":"昇陽半","3015":"全漢","2457":"飛宏","6409":"旭隼",
-    # 十一、金融股與高股息存股防禦
     "2884":"玉山金","2886":"兆豐金","2891":"中信金","2881":"富邦金","2882":"國泰金",
     "2892":"第一金","2885":"元大金","5880":"合庫金","2880":"華南金","2883":"開發金",
-    # 十二、傳統產業回溫與資產/低基期族群
     "1101":"台泥","1301":"台塑","1802":"台玻","2603":"長榮","2609":"陽明",
     "2615":"萬海","3008":"大立光","3376":"新日興","2105":"正新","2201":"裕隆",
 }
@@ -99,7 +87,9 @@ def get_price(sid):
     return closes, highs, lows
 
 def get_institution(sid):
-    rows = safe_fm({"dataset":"TaiwanStockInstitutionalInvestorsBuySell","data_id":sid,"start_date":START20,"end_date":TODAY})
+    """外資買賣超 → 連買/連賣天數"""
+    rows = safe_fm({"dataset":"TaiwanStockInstitutionalInvestorsBuySell",
+                    "data_id":sid,"start_date":START20,"end_date":TODAY})
     rows = [r for r in rows if r.get("name")=="外資"]
     rows.sort(key=lambda x: x["date"])
     if not rows: return 0
@@ -112,20 +102,20 @@ def get_institution(sid):
         else: break
     return count
 
-def get_chip(sid):
-    rows = safe_fm({"dataset":"TaiwanStockHoldingSharesPer","data_id":sid,"start_date":START20,"end_date":TODAY})
-    by_date = {}
-    for r in rows:
-        d = r["date"]
-        level = r.get("HoldingSharesLevel","")
-        pct = float(r.get("percent",0))
-        if any(x in level for x in ["400","1,000","4,000","10,000","15,000","20,000"]):
-            by_date[d] = by_date.get(d,0) + pct
-    if not by_date: return [55,57,59,61,63], 4
-    dates = sorted(by_date.keys())[-5:]
-    trend = [round(by_date[d],1) for d in dates]
+def get_foreign_holding(sid):
+    """外資持股比例（替代籌碼集中度，免費版可用）
+    回傳近5日趨勢串列 + 變化量"""
+    rows = safe_fm({"dataset":"TaiwanStockInstitutionalInvestorsHolding",
+                    "data_id":sid,"start_date":START20,"end_date":TODAY})
+    rows = [r for r in rows if r.get("name") in ("外資及陸資","外資")]
+    rows.sort(key=lambda x: x["date"])
+    if not rows: return [30,30,30,30,30], 0
+    # 取近5筆持股%
+    recent = rows[-5:]
+    trend = [round(float(r.get("percent", r.get("hold_rate", 30))), 1) for r in recent]
     while len(trend) < 5: trend.insert(0, trend[0])
-    return trend, round(trend[-1]-trend[0],1)
+    delta = round(trend[-1] - trend[0], 1)
+    return trend, delta
 
 def calc_ma(closes, n):
     if len(closes) < n: return closes[-1] if closes else 0
@@ -154,10 +144,10 @@ def classify(price, ma5, ma20, buy_days, chip_trend, chip_delta, cross, K, D):
     if price > ma20 > 0:    s += 1
     if buy_days >= 3:       s += 2
     elif buy_days >= 1:     s += 1
-    if chip_trend[-1] > 60: s += 1
-    if chip_delta > 3:      s += 1
+    if chip_trend[-1] > 40: s += 1   # 外資持股>40%為高
+    if chip_delta > 1:      s += 1   # 外資持股上升
     if cross:               s += 2
-    if buy_days <= -3 and chip_delta < -5: return "exit", min(s,5)
+    if buy_days <= -3 and chip_delta < -2: return "exit", min(s,5)
     if s >= 5: return "buy",   min(s,5)
     if s >= 3: return "watch", min(s,5)
     return "exit", min(s,5)
@@ -174,20 +164,25 @@ def main():
             closes, highs, lows = get_price(sid); time.sleep(0.4)
             if len(closes) < 10:
                 print(f"    ⚠ 資料不足"); continue
+
             price = closes[-1]
             ma5   = calc_ma(closes, 5)
             ma20  = calc_ma(closes, 20)
             K, D  = calc_kd(closes, highs, lows)
             cross = kd_cross(closes, highs, lows)
+
             buy_days = get_institution(sid); time.sleep(0.4)
-            chip_trend, chip_delta = get_chip(sid); time.sleep(0.4)
+            chip_trend, chip_delta = get_foreign_holding(sid); time.sleep(0.4)
+
             vs5  = round((price-ma5)/ma5*100,1)   if ma5  else 0
             vs20 = round((price-ma20)/ma20*100,1) if ma20 else 0
             signal, score = classify(price, ma5, ma20, buy_days, chip_trend, chip_delta, cross, K, D)
+
             entry  = round(price*1.005,1) if signal!="exit" else 0
             stop   = round(ma5*0.98,1)   if signal!="exit" else 0
             target = round(price*1.12,1) if signal!="exit" else 0
             rr     = round((target-entry)/(entry-stop),1) if (entry-stop)>0 else 0
+
             results.append({
                 "code":sid,"name":name,"tag":TAGS.get(sid,""),
                 "price":price,"ma5":ma5,"ma20":ma20,"vs5":vs5,"vs20":vs20,
@@ -196,11 +191,13 @@ def main():
                 "chipNow":chip_trend[-1],"chipDelta":chip_delta,
                 "entry":entry,"stop":stop,"target":target,"rr":rr,"score":score
             })
-            print(f"    ✓ {price} {signal} KD={K}/{D} 連買={buy_days}日")
+            print(f"    ✓ {price} {signal} KD={K}/{D} 外資持股={chip_trend[-1]}% 連買={buy_days}日")
+
         except Exception as e:
             print(f"    ✗ {e}"); continue
 
     results.sort(key=lambda x:(0 if x["signal"]=="buy" else 1 if x["signal"]=="watch" else 2,-x["score"]))
+
     summary = {
         "buy":     len([s for s in results if s["signal"]=="buy"]),
         "watch":   len([s for s in results if s["signal"]=="watch"]),
@@ -208,7 +205,12 @@ def main():
         "kd":      len([s for s in results if s["kd"]]),
         "scanned": len(WATCH_LIST)
     }
-    output = {"updated":datetime.datetime.now().strftime("%Y/%m/%d %H:%M"),"date":TODAY,"summary":summary,"stocks":results}
+    output = {
+        "updated": datetime.datetime.now().strftime("%Y/%m/%d %H:%M"),
+        "date":    TODAY,
+        "summary": summary,
+        "stocks":  results
+    }
     with open(OUTPUT_PATH,"w",encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f"\n✅ 完成！掃描{len(WATCH_LIST)}檔，輸出{len(results)}檔")
