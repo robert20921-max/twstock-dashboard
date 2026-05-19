@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>台股波段儀表板</title>
+<style>
+/* ── Reset & Base ── */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#f5f4f0;--surface:#ffffff;--surface2:#f1efe8;
+  --border:#e2e0d8;--border2:#ccc;
+  --text:#1a1a18;--text2:#5f5e5a;--text3:#888780;
+  --green:#3b6d11;--green-bg:#eaf3de;
+  --red:#a32d2d;--red-bg:#fcebeb;
+  --blue:#185fa5;--blue-bg:#e6f1fb;
+  --amber:#854f0b;--amber-bg:#faeeda;
+  --teal:#0f6e56;--teal-bg:#e1f5ee;
+  --purple:#3c3489;--purple-bg:#eeedfe;
+  --radius:10px;--radius-sm:6px;
+  --shadow:0 1px 3px rgba(0,0,0,.08);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1a1a18;--surface:#242422;--surface2:#2c2c2a;
+    --border:#3a3a38;--border2:#4a4a48;
+    --text:#e8e6dc;--text2:#a8a6a0;--text3:#706e68;
+    --green:#97c459;--green-bg:#27500a;
+    --red:#f09595;--red-bg:#501313;
+    --blue:#85b7eb;--blue-bg:#0c447c;
+    --amber:#fac775;--amber-bg:#633806;
+    --teal:#5dcaa5;--teal-bg:#085041;
+    --purple:#afa9ec;--purple-bg:#26215c;
+  }
+}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;font-size:15px;line-height:1.4}
+
+/* ── Layout ── */
+.app{max-width:480px;margin:0 auto;padding:0 0 80px}
+header{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 16px 10px}
+.header-top{display:flex;justify-content:space-between;align-items:center}
+.header-title{font-size:16px;font-weight:600;color:var(--text)}
+.header-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.updated-tag{font-size:10px;padding:3px 8px;border-radius:12px;background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+
+/* ── Bottom Nav ── */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--surface);border-top:1px solid var(--border);display:flex;max-width:480px;margin:0 auto}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px 10px;font-size:10px;color:var(--text3);border:none;background:transparent;cursor:pointer;gap:3px;transition:color .15s}
+.nav-btn.active{color:var(--blue)}
+.nav-btn svg{width:22px;height:22px}
+
+/* ── Section ── */
+.section{padding:14px 16px 4px}
+.section-title{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+
+/* ── Summary Cards ── */
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 16px}
+.sum-card{background:var(--surface);border-radius:var(--radius);padding:10px 8px;text-align:center;border:1px solid var(--border)}
+.sum-val{font-size:22px;font-weight:700;line-height:1}
+.sum-lbl{font-size:10px;color:var(--text2);margin-top:4px}
+
+/* ── Filter Tabs ── */
+.filter-scroll{overflow-x:auto;padding:0 16px 10px;scrollbar-width:none}
+.filter-scroll::-webkit-scrollbar{display:none}
+.filter-row{display:flex;gap:7px;width:max-content}
+.fc{font-size:12px;padding:6px 14px;border-radius:20px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;white-space:nowrap;font-weight:500;transition:all .15s}
+.fc.on{background:var(--text);color:var(--bg);border-color:transparent}
+
+/* ── Stock Cards ── */
+.stock-list{padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.stock-card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:opacity .15s}
+.stock-card:active{opacity:.85}
+.sc-header{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 14px 8px}
+.sc-name{font-size:15px;font-weight:600;color:var(--text)}
+.sc-code{font-size:11px;color:var(--text3);margin-top:1px}
+.sc-tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle;font-weight:500}
+.sc-price{text-align:right}
+.sc-price-val{font-size:18px;font-weight:700}
+.sc-price-vs{font-size:11px;margin-top:2px;font-weight:500}
+.sc-body{padding:0 14px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sc-row{display:flex;flex-direction:column;gap:2px}
+.sc-row-label{font-size:10px;color:var(--text3);font-weight:500}
+.sc-row-val{font-size:12px;font-weight:500;color:var(--text)}
+.sc-footer{border-top:1px solid var(--border);padding:10px 14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.sc-price-box{text-align:center}
+.sc-price-box-label{font-size:9px;font-weight:600;letter-spacing:.04em;margin-bottom:2px}
+.sc-price-box-val{font-size:13px;font-weight:700}
+
+/* ── Signal badges ── */
+.sig{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:12px}
+.sig-dot{width:6px;height:6px;border-radius:50%}
+.sig-buy{background:var(--green-bg);color:var(--green)}
+.sig-buy .sig-dot{background:var(--green)}
+.sig-watch{background:var(--amber-bg);color:var(--amber)}
+.sig-watch .sig-dot{background:#ef9f27;animation:blink 1.4s infinite}
+.sig-exit{background:var(--red-bg);color:var(--red)}
+.sig-exit .sig-dot{background:var(--red)}
+.sig-kd{background:var(--teal-bg);color:var(--teal)}
+.sig-kd .sig-dot{background:var(--teal);animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── Chip sparkline ── */
+.spark{display:flex;align-items:flex-end;gap:2px;height:18px}
+.spark-bar{width:7px;border-radius:2px 2px 0 0}
+
+/* ── KD meter ── */
+.kd-wrap{display:flex;align-items:center;gap:6px}
+.kd-track{flex:1;height:5px;background:var(--surface2);border-radius:3px;overflow:hidden}
+.kd-fill{height:100%;border-radius:3px}
+
+/* ── RR Badge ── */
+.rr-badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:8px}
+.rr-good{background:var(--green-bg);color:var(--green)}
+.rr-ok{background:var(--amber-bg);color:var(--amber)}
+.rr-bad{background:var(--red-bg);color:var(--red)}
+
+/* ── Score dots ── */
+.sdots{display:flex;gap:3px}
+.sdot{width:8px;height:8px;border-radius:2px}
+
+/* ── KD Special section ── */
+.kd-section-header{display:flex;align-items:center;gap:8px;padding:14px 16px 8px}
+.kd-section-line{flex:1;height:1px;background:var(--teal);opacity:.3}
+.kd-section-label{font-size:11px;font-weight:600;color:var(--teal);white-space:nowrap}
+.kd-card{background:var(--teal-bg);border:1px solid var(--teal);border-radius:var(--radius);padding:12px 14px;cursor:pointer;transition:opacity .15s}
+.kd-card:active{opacity:.85}
+
+/* ── Loading ── */
+#loading{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:999}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loading p{font-size:14px;color:var(--text2)}
+
+/* ── Error ── */
+#error-msg{display:none;padding:20px 16px;text-align:center;color:var(--red);font-size:14px;line-height:1.7}
+
+/* ── Tab pages ── */
+.page{display:none}
+.page.active{display:block}
+
+/* ── Detail Sheet ── */
+#detail-sheet{position:fixed;inset:0;z-index:200;display:none}
+#detail-sheet.open{display:flex;flex-direction:column}
+.sheet-overlay{flex:1;background:rgba(0,0,0,.4)}
+.sheet-body{background:var(--surface);border-radius:18px 18px 0 0;padding:20px 20px 40px;max-height:80vh;overflow-y:auto;max-width:480px;width:100%;margin:0 auto}
+.sheet-handle{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:0 auto 16px}
+.sheet-title{font-size:17px;font-weight:700;margin-bottom:14px}
+.sheet-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.sheet-cell{background:var(--surface2);border-radius:var(--radius-sm);padding:10px 12px}
+.sheet-cell-label{font-size:10px;color:var(--text3);margin-bottom:3px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.sheet-cell-val{font-size:15px;font-weight:600;color:var(--text)}
+.sheet-note{font-size:11px;color:var(--text3);line-height:1.7;padding:10px 12px;background:var(--surface2);border-radius:var(--radius-sm)}
+.sheet-close{width:100%;margin-top:14px;padding:14px;background:var(--text);color:var(--bg);border:none;border-radius:var(--radius);font-size:15px;font-weight:600;cursor:pointer}
+
+/* ── Info page ── */
+.info-card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:14px 16px;margin:0 16px 10px}
+.info-card h3{font-size:13px;font-weight:600;margin-bottom:8px}
+.info-card p,
+.info-card li{font-size:12px;color:var(--text2);line-height:1.8}
+.info-card ul{padding-left:16px}
+.step-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.step-num{width:22px;height:22px;border-radius:50%;background:var(--blue-bg);color:var(--blue);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-text{font-size:12px;color:var(--text2);line-height:1.6}
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading">
+  <div class="spinner"></div>
+  <p>載入最新台股資料中…</p>
+</div>
+<div id="error-msg">⚠️ 資料載入失敗<br>請確認網路連線，或稍後再試</div>
+
+<!-- Header -->
+<header>
+  <div class="header-top">
+    <div>
+      <div class="header-title">📊 台股波段儀表板</div>
+      <div class="header-sub" id="header-sub">載入中…</div>
+    </div>
+    <span class="updated-tag" id="updated-tag">--</span>
+  </div>
+</header>
+
+<!-- App -->
+<div class="app">
+
+  <!-- Page: 選股 -->
+  <div class="page active" id="page-screen">
+
+    <!-- Summary -->
+    <div class="summary-grid">
+      <div class="sum-card"><div class="sum-val" style="color:var(--green)" id="sum-buy">-</div><div class="sum-lbl">買進</div></div>
+      <div class="sum-card"><div class="sum-val" style="color:var(--amber)" id="sum-watch">-</div><div class="sum-lbl">觀察</div></div>
+      <div class="sum-card"><div class="sum-val" style="color:var(--red)" id="sum-exit">-</div><div class="sum-lbl">出場</div></div>
+      <div class="sum-card"><div class="sum-val" style="color:var(--teal)" id="sum-kd">-</div><div class="sum-lbl">KD↑</div></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-scroll">
+      <div class="filter-row">
+        <button class="fc on" onclick="setFilter('all',this)">全部</button>
+        <button class="fc" onclick="setFilter('buy',this)">🟢 買進訊號</button>
+        <button class="fc" onclick="setFilter('watch',this)">🟡 觀察區間</button>
+        <button class="fc" onclick="setFilter('exit',this)">🔴 出場訊號</button>
+        <button class="fc" onclick="setFilter('kd',this)">🌿 KD黃金交叉</button>
+      </div>
+    </div>
+
+    <!-- KD section header (shown only in kd filter) -->
+    <div class="kd-section-header" id="kd-section-header" style="display:none">
+      <div class="kd-section-line"></div>
+      <div class="kd-section-label">KD 黃金交叉 — 超賣反彈高潛力</div>
+      <div class="kd-section-line"></div>
+    </div>
+
+    <!-- Stock list -->
+    <div class="stock-list" id="stock-list"></div>
+
+  </div>
+
+  <!-- Page: 訊號時序 -->
+  <div class="page" id="page-signals">
+    <div class="section">
+      <div class="section-title">今日技術訊號</div>
+      <div id="signal-list" style="display:flex;flex-direction:column;gap:10px"></div>
+    </div>
+  </div>
+
+  <!-- Page: 說明 -->
+  <div class="page" id="page-info">
+    <div class="section">
+      <div class="section-title">使用說明</div>
+    </div>
+    <div class="info-card">
+      <h3>📅 資料更新時間</h3>
+      <p>每個交易日 <b>17:45</b> 自動更新（收盤後約 45 分鐘）<br>週末與國定假日不更新</p>
+    </div>
+    <div class="info-card">
+      <h3>🔢 進出場價位說明</h3>
+      <ul>
+        <li><b style="color:var(--green)">進場價</b>：突破確認 +0.5% 掛單</li>
+        <li><b style="color:var(--red)">停損價</b>：跌破 5 日均線收盤執行</li>
+        <li><b style="color:var(--blue)">目標價</b>：前波高點或進場起算 +12%</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>📊 KD 黃金交叉篩選邏輯</h3>
+      <p>K 值從低檔（≤50）向上穿越 D 值，且 KD 值在超賣區反彈，搭配法人同步買超為最強訊號。</p>
+    </div>
+    <div class="info-card">
+      <h3>📡 資料來源</h3>
+      <ul>
+        <li>收盤價 / 均線：TWSE OpenAPI</li>
+        <li>法人買賣超：FinMind API</li>
+        <li>籌碼集中度：FinMind 持股分級</li>
+        <li>KD 指標：本地計算（RSV 9日）</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>⚠️ 免責聲明</h3>
+      <p>本儀表板所有資訊僅供技術面參考，不構成投資建議。股市有風險，操作須自行負責。</p>
+    </div>
+  </div>
+
+</div><!-- /app -->
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <button class="nav-btn active" onclick="switchPage('screen',this)" id="nav-screen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    選股
+  </button>
+  <button class="nav-btn" onclick="switchPage('signals',this)" id="nav-signals">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    訊號
+  </button>
+  <button class="nav-btn" onclick="switchPage('info',this)" id="nav-info">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    說明
+  </button>
+</div>
+
+<!-- Detail Sheet -->
+<div id="detail-sheet">
+  <div class="sheet-overlay" onclick="closeSheet()"></div>
+  <div class="sheet-body" id="sheet-body">
+    <div class="sheet-handle"></div>
+    <div id="sheet-content"></div>
+    <button class="sheet-close" onclick="closeSheet()">關閉</button>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────
+let ALL_STOCKS = [];
+let currentFilter = 'all';
+
+// ── Fetch ─────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+
+    ALL_STOCKS = data.stocks || [];
+
+    document.getElementById('updated-tag').textContent = '更新 ' + data.updated;
+    document.getElementById('header-sub').textContent =
+      `買進 ${data.summary.buy} · 觀察 ${data.summary.watch} · 出場 ${data.summary.exit} · KD↑ ${data.summary.kd}`;
+    document.getElementById('sum-buy').textContent   = data.summary.buy;
+    document.getElementById('sum-watch').textContent = data.summary.watch;
+    document.getElementById('sum-exit').textContent  = data.summary.exit;
+    document.getElementById('sum-kd').textContent    = data.summary.kd;
+
+    renderStocks('all');
+    renderSignals();
+
+    document.getElementById('loading').style.display = 'none';
+  } catch(e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'block';
+    console.error(e);
+  }
+}
+
+// ── Helpers ───────────────────────────────────
+function tagColor(t) {
+  const m = {AI:'purple',電源:'green',封裝:'blue',ASIC:'purple',散熱:'blue',BMC:'purple',
+             晶圓:'blue',網通:'blue',航運:'amber',鋼鐵:'',傳產:'',面板:''};
+  const c = m[t] || '';
+  if (!c) return `style="background:var(--surface2);color:var(--text3)"`;
+  const map2 = {purple:'purple',green:'green',blue:'blue',amber:'amber'};
+  return `style="background:var(--${map2[c]}-bg);color:var(--${map2[c]})"`;
+}
+
+function sigHtml(s, kd) {
+  const kdPart = kd ? `<span class="sig sig-kd" style="margin-left:5px"><span class="sig-dot"></span>KD↑</span>` : '';
+  if (s === 'buy')   return `<span class="sig sig-buy"><span class="sig-dot"></span>買進</span>${kdPart}`;
+  if (s === 'watch') return `<span class="sig sig-watch"><span class="sig-dot"></span>觀察</span>${kdPart}`;
+  return `<span class="sig sig-exit"><span class="sig-dot"></span>出場</span>`;
+}
+
+function sparkHtml(arr, chipDelta) {
+  const max = Math.max(...arr);
+  const color = chipDelta > 0 ? '#185fa5' : chipDelta < 0 ? '#e24b4a' : '#ef9f27';
+  const bars = arr.map(v => {
+    const h = Math.max(3, Math.round(v / max * 16));
+    return `<div class="spark-bar" style="height:${h}px;background:${color}"></div>`;
+  }).join('');
+  return `<div class="spark">${bars}</div>`;
+}
+
+function scoreDots(n) {
+  return Array.from({length:5}, (_,i) =>
+    `<div class="sdot" style="background:${i<n?'#185fa5':'var(--border2)'}"></div>`
+  ).join('');
+}
+
+function rrClass(rr) {
+  if (rr >= 2) return 'rr-good';
+  if (rr >= 1.5) return 'rr-ok';
+  return 'rr-bad';
+}
+
+function fmtPrice(p) {
+  return p >= 1000 ? p.toLocaleString() : p.toFixed(1);
+}
+
+function vsColor(v) { return v >= 0 ? 'var(--green)' : 'var(--red)'; }
+
+// ── Render Stock Cards ─────────────────────────
+function renderStocks(filter) {
+  currentFilter = filter;
+  const list = document.getElementById('stock-list');
+  const kdHeader = document.getElementById('kd-section-header');
+  kdHeader.style.display = filter === 'kd' ? 'flex' : 'none';
+
+  const data = filter === 'all'  ? ALL_STOCKS :
+               filter === 'buy'  ? ALL_STOCKS.filter(s => s.signal === 'buy') :
+               filter === 'watch'? ALL_STOCKS.filter(s => s.signal === 'watch') :
+               filter === 'exit' ? ALL_STOCKS.filter(s => s.signal === 'exit') :
+               ALL_STOCKS.filter(s => s.kd);
+
+  if (!data.length) {
+    list.innerHTML = `<div style="text-align:center;color:var(--text3);padding:30px;font-size:13px">目前無符合條件的股票</div>`;
+    return;
+  }
+
+  list.innerHTML = data.map((s, idx) => {
+    const isExit = s.signal === 'exit';
+    const chipDeltaSign = s.chipDelta >= 0 ? '+' : '';
+    const chipColor = s.chipDelta > 0 ? 'var(--green)' : s.chipDelta < 0 ? 'var(--red)' : 'var(--amber)';
+    const buyColor  = s.buyDays > 0 ? 'var(--green)' : 'var(--red)';
+    const buyText   = s.buyDays > 0 ? `連買 ${s.buyDays} 日` : `連賣 ${Math.abs(s.buyDays)} 日`;
+    const marginSign = s.margin >= 0 ? '+' : '';
+    const marginColor= s.margin < 0 ? 'var(--green)' : s.margin > 0 ? 'var(--red)' : 'var(--text2)';
+    const vs5Color  = vsColor(s.vs5);
+    const vs20Color = vsColor(s.vs20);
+    const kdColor   = s.K > 70 ? 'var(--red)' : s.kd ? 'var(--teal)' : 'var(--blue)';
+
+    const priceFooter = isExit
+      ? `<div class="sc-price-box" style="grid-column:1/-1;text-align:center"><div class="sc-price-box-label" style="color:var(--red)">出場警示</div><div style="font-size:12px;color:var(--text2)">持有者評估停損 / 不宜新倉</div></div>`
+      : `<div class="sc-price-box">
+           <div class="sc-price-box-label" style="color:var(--green)">▶ 進場</div>
+           <div class="sc-price-box-val" style="color:var(--green)">${fmtPrice(s.entry)}</div>
+         </div>
+         <div class="sc-price-box">
+           <div class="sc-price-box-label" style="color:var(--red)">✕ 停損</div>
+           <div class="sc-price-box-val" style="color:var(--red)">${fmtPrice(s.stop)}</div>
+         </div>
+         <div class="sc-price-box">
+           <div class="sc-price-box-label" style="color:var(--blue)">★ 目標</div>
+           <div class="sc-price-box-val" style="color:var(--blue)">${fmtPrice(s.target)}</div>
+         </div>`;
+
+    const cardBorder = s.kd ? 'border-color:var(--teal)' : '';
+
+    return `
+<div class="stock-card" style="${cardBorder}" onclick="openDetail(${idx})">
+  <div class="sc-header">
+    <div>
+      <div>
+        <span class="sc-name">${s.name}</span>
+        <span class="sc-tag" ${tagColor(s.tag)}>${s.tag}</span>
+      </div>
+      <div class="sc-code">${s.code}</div>
+    </div>
+    <div class="sc-price">
+      <div class="sc-price-val" style="color:${s.vs5>=0?'var(--green)':'var(--red)'}">${fmtPrice(s.price)}</div>
+      <div>${sigHtml(s.signal, s.kd)}</div>
+    </div>
+  </div>
+  <div class="sc-body">
+    <div class="sc-row">
+      <div class="sc-row-label">vs 5日線</div>
+      <div class="sc-row-val" style="color:${vs5Color}">${s.vs5 >= 0 ? '+' : ''}${s.vs5}%</div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-row-label">vs 20日線</div>
+      <div class="sc-row-val" style="color:${vs20Color}">${s.vs20 >= 0 ? '+' : ''}${s.vs20}%</div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-row-label">籌碼集中度</div>
+      <div style="display:flex;align-items:center;gap:5px">
+        ${sparkHtml(s.chipTrend, s.chipDelta)}
+        <span style="font-size:12px;font-weight:500;color:${chipColor}">${s.chipNow}% ${chipDeltaSign}${s.chipDelta}%</span>
+      </div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-row-label">法人動向</div>
+      <div class="sc-row-val" style="color:${buyColor}">${buyText}</div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-row-label">KD (K/D)</div>
+      <div class="kd-wrap">
+        <div class="kd-track"><div class="kd-fill" style="width:${s.K}%;background:${kdColor}"></div></div>
+        <span style="font-size:11px;font-weight:500;color:${kdColor}">${s.K}/${s.D}</span>
+      </div>
+    </div>
+    <div class="sc-row">
+      <div class="sc-row-label">評分</div>
+      <div style="display:flex;align-items:center;gap:5px">
+        <div class="sdots">${scoreDots(s.score)}</div>
+        ${!isExit ? `<span class="rr-badge ${rrClass(s.rr)}" style="font-size:10px;padding:2px 6px">1:${s.rr}</span>` : ''}
+      </div>
+    </div>
+  </div>
+  <div class="sc-footer">${priceFooter}</div>
+</div>`;
+  }).join('');
+}
+
+// ── Render Signals Page ───────────────────────
+function renderSignals() {
+  const list = document.getElementById('signal-list');
+  const buys  = ALL_STOCKS.filter(s => s.signal === 'buy').slice(0,6);
+  const exits = ALL_STOCKS.filter(s => s.signal === 'exit').slice(0,4);
+  const kds   = ALL_STOCKS.filter(s => s.kd).slice(0,5);
+
+  const makeSignalCard = (s, type) => {
+    const isKd    = type === 'kd';
+    const isExit  = type === 'exit';
+    const border  = isKd ? 'border-color:var(--teal)' : isExit ? 'border-color:var(--red)' : 'border-color:var(--green)';
+    const tag     = isKd ? `<span class="sig sig-kd"><span class="sig-dot"></span>KD黃金交叉</span>` :
+                   isExit? `<span class="sig sig-exit"><span class="sig-dot"></span>出場訊號</span>` :
+                           `<span class="sig sig-buy"><span class="sig-dot"></span>買進訊號</span>`;
+    const desc    = isExit
+      ? `籌碼發散 ${s.chipDelta}%，法人連賣 ${Math.abs(s.buyDays)} 日，KD=${s.K}/${s.D}`
+      : isKd
+      ? `K(${s.K}) 穿越 D(${s.D})，籌碼集中 ${s.chipNow}%，法人連買 ${s.buyDays} 日`
+      : `突破訊號，法人連買 ${s.buyDays} 日，籌碼集中 ${s.chipNow}%(${s.chipDelta >= 0 ? '+' : ''}${s.chipDelta}%)`;
+    const priceRow = !isExit
+      ? `<div style="display:flex;gap:12px;margin-top:7px;font-size:12px">
+           <span style="color:var(--green)">▶ 進 ${fmtPrice(s.entry)}</span>
+           <span style="color:var(--red)">✕ 損 ${fmtPrice(s.stop)}</span>
+           <span style="color:var(--blue)">★ 標 ${fmtPrice(s.target)}</span>
+           <span style="color:var(--text3)">1:${s.rr}</span>
+         </div>` : '';
+    return `
+<div style="background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);${border};padding:12px 14px;cursor:pointer" onclick="switchPage('screen',document.getElementById('nav-screen'));setFilter('all',document.querySelector('.fc'))">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+    <span style="font-size:14px;font-weight:600">${s.name} <span style="font-size:11px;color:var(--text3)">${s.code}</span></span>
+    ${tag}
+  </div>
+  <div style="font-size:12px;color:var(--text2)">${desc}</div>
+  ${priceRow}
+</div>`;
+  };
+
+  list.innerHTML = `
+    <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:4px">🟢 買進訊號 (${buys.length})</div>
+    ${buys.map(s => makeSignalCard(s,'buy')).join('')}
+    <div style="font-size:12px;font-weight:600;color:var(--teal);margin:10px 0 4px">🌿 KD 黃金交叉 (${kds.length})</div>
+    ${kds.map(s => makeSignalCard(s,'kd')).join('')}
+    <div style="font-size:12px;font-weight:600;color:var(--red);margin:10px 0 4px">🔴 出場訊號 (${exits.length})</div>
+    ${exits.map(s => makeSignalCard(s,'exit')).join('')}
+  `;
+}
+
+// ── Detail Sheet ──────────────────────────────
+let filteredStocks = [];
+function openDetail(idx) {
+  const filter = currentFilter;
+  filteredStocks = filter === 'all'  ? ALL_STOCKS :
+                   filter === 'buy'  ? ALL_STOCKS.filter(s => s.signal === 'buy') :
+                   filter === 'watch'? ALL_STOCKS.filter(s => s.signal === 'watch') :
+                   filter === 'exit' ? ALL_STOCKS.filter(s => s.signal === 'exit') :
+                   ALL_STOCKS.filter(s => s.kd);
+  const s = filteredStocks[idx];
+  if (!s) return;
+  const isExit = s.signal === 'exit';
+  const rr_pct = isExit ? '' : `+${(((s.target - s.entry) / s.entry) * 100).toFixed(1)}%`;
+
+  document.getElementById('sheet-content').innerHTML = `
+    <div class="sheet-title">${s.name} (${s.code}) ${sigHtml(s.signal, s.kd)}</div>
+    <div class="sheet-grid">
+      <div class="sheet-cell"><div class="sheet-cell-label">現價</div><div class="sheet-cell-val" style="color:${s.vs5>=0?'var(--green)':'var(--red)'}">${fmtPrice(s.price)}</div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">評分</div><div style="display:flex;gap:3px;margin-top:4px"><div class="sdots">${scoreDots(s.score)}</div></div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">vs 5日線</div><div class="sheet-cell-val" style="color:${vsColor(s.vs5)}">${s.vs5>=0?'+':''}${s.vs5}%</div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">vs 20日線</div><div class="sheet-cell-val" style="color:${vsColor(s.vs20)}">${s.vs20>=0?'+':''}${s.vs20}%</div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">KD 值</div><div class="sheet-cell-val" style="color:${s.kd?'var(--teal)':'var(--text)'}">${s.K} / ${s.D}${s.kd?' ✨':''}</div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">法人動向</div><div class="sheet-cell-val" style="color:${s.buyDays>0?'var(--green)':'var(--red)'}">${s.buyDays>0?'連買':'連賣'} ${Math.abs(s.buyDays)} 日</div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">籌碼集中度</div><div class="sheet-cell-val" style="color:${s.chipDelta>0?'var(--green)':s.chipDelta<0?'var(--red)':'var(--amber)'}">${s.chipNow}% (${s.chipDelta>=0?'+':''}${s.chipDelta}%)</div></div>
+      <div class="sheet-cell"><div class="sheet-cell-label">融資增減</div><div class="sheet-cell-val" style="color:${s.margin<0?'var(--green)':s.margin>0?'var(--red)':'var(--text2)'}">${s.margin>=0?'+':''}${s.margin} 張</div></div>
+    </div>
+    ${!isExit ? `
+    <div style="background:var(--surface2);border-radius:var(--radius);padding:12px 14px;margin-bottom:12px">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px">進出場建議</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center">
+        <div><div style="font-size:10px;color:var(--green);font-weight:600;margin-bottom:3px">▶ 進場</div><div style="font-size:16px;font-weight:700;color:var(--green)">${fmtPrice(s.entry)}</div></div>
+        <div><div style="font-size:10px;color:var(--red);font-weight:600;margin-bottom:3px">✕ 停損</div><div style="font-size:16px;font-weight:700;color:var(--red)">${fmtPrice(s.stop)}</div></div>
+        <div><div style="font-size:10px;color:var(--blue);font-weight:600;margin-bottom:3px">★ 目標</div><div style="font-size:16px;font-weight:700;color:var(--blue)">${fmtPrice(s.target)}</div></div>
+      </div>
+      <div style="text-align:center;margin-top:8px;font-size:12px;color:var(--text2)">
+        上漲潛力 <b style="color:var(--green)">${rr_pct}</b> · 報酬風險比 <b>1:${s.rr}</b>
+      </div>
+    </div>` : `<div style="background:var(--red-bg);border-radius:var(--radius);padding:12px;text-align:center;color:var(--red);font-size:13px;margin-bottom:12px">⚠️ 出場訊號 — 持有者建議評估停損，不宜新建倉位</div>`}
+    <div class="sheet-note">停損原則：跌破 5 日均線收盤價時隔日出場<br>目標價：前波高點或進場起算 +12%（分批減碼）<br>以上為技術面計算參考，非投資建議</div>
+  `;
+  document.getElementById('detail-sheet').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSheet() {
+  document.getElementById('detail-sheet').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Navigation ────────────────────────────────
+function switchPage(name, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function setFilter(type, btn) {
+  document.querySelectorAll('.fc').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderStocks(type);
+}
+
+// ── Init ──────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
