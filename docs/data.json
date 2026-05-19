@@ -1,11 +1,12 @@
 {
-  "updated": "2026/05/19 14:11",
+  "updated": "2026/05/19 14:34",
   "date": "2026-05-19",
   "summary": {
     "buy": 0,
     "watch": 0,
     "exit": 0,
-    "kd": 0
+    "kd": 0,
+    "scanned": 0
   },
   "stocks": []
 }
