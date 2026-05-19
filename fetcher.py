@@ -63,7 +63,14 @@ def get_all_stocks():
 
 def get_today_turnover():
     """取得今日各股周轉率與成交量（TWSE 大盤統計）"""
-    ym = datetime.date.today().strftime("%Y%m%d")
+    # 收盤後才有資料，盤中或假日自動退回前一個交易日
+    today = datetime.date.today()
+    if datetime.datetime.now().hour < 17:
+        today = today - datetime.timedelta(days=1)
+        # 若遇週一則退到上週五
+        while today.weekday() >= 5:
+            today = today - datetime.timedelta(days=1)
+    ym = today.strftime("%Y%m%d")
     data = safe_twse("https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
                      {"response":"json","date":ym,"type":"ALLBUT0999"})
     turnover = {}
@@ -81,7 +88,12 @@ def get_today_turnover():
 
 def get_industry_flow():
     """取得今日各產業漲跌幅（資金流入排行）"""
-    ym = datetime.date.today().strftime("%Y%m%d")
+    today = datetime.date.today()
+    if datetime.datetime.now().hour < 17:
+        today = today - datetime.timedelta(days=1)
+        while today.weekday() >= 5:
+            today = today - datetime.timedelta(days=1)
+    ym = today.strftime("%Y%m%d")
     data = safe_twse("https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
                      {"response":"json","date":ym,"type":"MS"})
     flow = {}
