@@ -1,10 +1,10 @@
 {
-  "updated": "2026/05/19 15:30",
+  "updated": "2026/05/19 16:07",
   "date": "2026-05-19",
   "summary": {
-    "buy": 6,
-    "watch": 47,
-    "exit": 67,
+    "buy": 0,
+    "watch": 6,
+    "exit": 114,
     "kd": 7,
     "scanned": 120
   },
@@ -18,25 +18,25 @@
       "ma20": 291.3,
       "vs5": 4.2,
       "vs20": 5.6,
-      "signal": "buy",
+      "signal": "watch",
       "kd": true,
       "K": 51.2,
       "D": 49.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 309.0,
       "stop": 289.1,
       "target": 344.4,
       "rr": 1.8,
-      "score": 5
+      "score": 4
     },
     {
       "code": "4545",
@@ -47,25 +47,25 @@
       "ma20": 30.15,
       "vs5": 5.3,
       "vs20": 4.3,
-      "signal": "buy",
+      "signal": "watch",
       "kd": true,
       "K": 41.3,
       "D": 30.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 31.6,
       "stop": 29.3,
       "target": 35.2,
       "rr": 1.6,
-      "score": 5
+      "score": 4
     },
     {
       "code": "3015",
@@ -76,25 +76,25 @@
       "ma20": 50.5,
       "vs5": 1.3,
       "vs20": 0.4,
-      "signal": "buy",
+      "signal": "watch",
       "kd": true,
       "K": 34.0,
       "D": 33.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 51.0,
       "stop": 49.1,
       "target": 56.8,
       "rr": 3.1,
-      "score": 5
+      "score": 4
     },
     {
       "code": "2886",
@@ -105,54 +105,25 @@
       "ma20": 39.63,
       "vs5": 2.4,
       "vs20": 2.6,
-      "signal": "buy",
+      "signal": "watch",
       "kd": true,
       "K": 48.6,
       "D": 45.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 40.9,
       "stop": 38.9,
       "target": 45.5,
       "rr": 2.3,
-      "score": 5
-    },
-    {
-      "code": "2609",
-      "name": "陽明",
-      "tag": "航運",
-      "price": 49.5,
-      "ma5": 48.79,
-      "ma20": 49.74,
-      "vs5": 1.5,
-      "vs20": -0.5,
-      "signal": "buy",
-      "kd": true,
-      "K": 36.6,
-      "D": 33.5,
-      "buyDays": 0,
-      "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
-      ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 49.7,
-      "stop": 47.8,
-      "target": 55.4,
-      "rr": 3.0,
-      "score": 5
+      "score": 4
     },
     {
       "code": "2615",
@@ -163,25 +134,54 @@
       "ma20": 75.88,
       "vs5": 5.6,
       "vs20": 6.0,
-      "signal": "buy",
+      "signal": "watch",
       "kd": true,
       "K": 61.2,
       "D": 51.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 80.8,
       "stop": 74.6,
       "target": 90.0,
       "rr": 1.5,
-      "score": 5
+      "score": 4
+    },
+    {
+      "code": "2609",
+      "name": "陽明",
+      "tag": "航運",
+      "price": 49.5,
+      "ma5": 48.79,
+      "ma20": 49.74,
+      "vs5": 1.5,
+      "vs20": -0.5,
+      "signal": "watch",
+      "kd": true,
+      "K": 36.6,
+      "D": 33.5,
+      "buyDays": 0,
+      "chipTrend": [
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 49.7,
+      "stop": 47.8,
+      "target": 55.4,
+      "rr": 3.0,
+      "score": 3
     },
     {
       "code": "2303",
@@ -192,25 +192,25 @@
       "ma20": 89.3,
       "vs5": 4.6,
       "vs20": 26.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 80.7,
       "D": 83.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 113.6,
-      "stop": 105.9,
-      "target": 126.6,
-      "rr": 1.7,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "8027",
@@ -221,25 +221,25 @@
       "ma20": 202.95,
       "vs5": 2.4,
       "vs20": 31.1,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 81.9,
       "D": 85.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 267.3,
-      "stop": 254.5,
-      "target": 297.9,
-      "rr": 2.4,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2404",
@@ -250,25 +250,25 @@
       "ma20": 994.5,
       "vs5": 0.8,
       "vs20": 3.6,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 47.3,
       "D": 51.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 1035.1,
-      "stop": 1001.6,
-      "target": 1153.6,
-      "rr": 3.5,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "6805",
@@ -279,25 +279,25 @@
       "ma20": 1935.25,
       "vs5": 0.0,
       "vs20": -8.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": true,
       "K": 19.6,
       "D": 19.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 1778.8,
-      "stop": 1734.6,
-      "target": 1982.4,
-      "rr": 4.6,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "3694",
@@ -308,25 +308,25 @@
       "ma20": 60.18,
       "vs5": 8.8,
       "vs20": 7.7,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 61.0,
       "D": 44.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 65.1,
-      "stop": 58.4,
-      "target": 72.6,
-      "rr": 1.1,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "3189",
@@ -337,25 +337,25 @@
       "ma20": 502.02,
       "vs5": 1.6,
       "vs20": 2.2,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 60.4,
       "D": 54.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 515.6,
-      "stop": 494.6,
-      "target": 574.6,
-      "rr": 2.8,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2316",
@@ -366,25 +366,25 @@
       "ma20": 121.47,
       "vs5": 3.5,
       "vs20": 14.4,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 62.7,
       "D": 63.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 139.7,
-      "stop": 131.6,
-      "target": 155.7,
-      "rr": 2.0,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2367",
@@ -395,25 +395,25 @@
       "ma20": 61.93,
       "vs5": 0.3,
       "vs20": 2.2,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 59.3,
       "D": 61.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 63.6,
-      "stop": 61.9,
-      "target": 70.9,
-      "rr": 4.3,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2455",
@@ -424,25 +424,25 @@
       "ma20": 352.7,
       "vs5": 2.9,
       "vs20": 8.6,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 78.5,
       "D": 68.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 384.9,
-      "stop": 364.8,
-      "target": 429.0,
-      "rr": 2.2,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2891",
@@ -453,25 +453,25 @@
       "ma20": 54.04,
       "vs5": 0.8,
       "vs20": 2.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 49.2,
       "D": 51.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 55.7,
-      "stop": 53.8,
-      "target": 62.0,
-      "rr": 3.3,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2881",
@@ -482,25 +482,25 @@
       "ma20": 92.21,
       "vs5": 1.7,
       "vs20": 5.4,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 67.0,
       "D": 68.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 97.7,
-      "stop": 93.6,
-      "target": 108.9,
-      "rr": 2.7,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2882",
@@ -511,25 +511,25 @@
       "ma20": 76.93,
       "vs5": 0.6,
       "vs20": 1.1,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 32.4,
       "D": 38.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 78.2,
-      "stop": 75.8,
-      "target": 87.1,
-      "rr": 3.7,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "3008",
@@ -540,25 +540,25 @@
       "ma20": 2737.5,
       "vs5": 4.6,
       "vs20": 22.9,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 82.7,
       "D": 77.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 3381.8,
-      "stop": 3152.7,
-      "target": 3768.8,
-      "rr": 1.7,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2105",
@@ -569,25 +569,25 @@
       "ma20": 31.89,
       "vs5": 1.1,
       "vs20": 1.6,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 69.3,
       "D": 64.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 32.6,
-      "stop": 31.4,
-      "target": 36.3,
-      "rr": 3.1,
-      "score": 4
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 2
     },
     {
       "code": "2317",
@@ -598,25 +598,25 @@
       "ma20": 236.93,
       "vs5": -1.0,
       "vs20": 3.4,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 47.7,
       "D": 63.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 246.2,
-      "stop": 242.5,
-      "target": 274.4,
-      "rr": 7.6,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2356",
@@ -627,25 +627,25 @@
       "ma20": 48.88,
       "vs5": -1.3,
       "vs20": 5.8,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 64.0,
       "D": 69.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 52.0,
-      "stop": 51.3,
-      "target": 57.9,
-      "rr": 8.4,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2395",
@@ -656,25 +656,25 @@
       "ma20": 414.7,
       "vs5": -0.0,
       "vs20": 11.3,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 63.2,
       "D": 72.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 463.8,
-      "stop": 452.4,
-      "target": 516.9,
-      "rr": 4.7,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "5347",
@@ -685,25 +685,25 @@
       "ma20": 157.07,
       "vs5": -5.8,
       "vs20": 0.3,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 37.0,
       "D": 55.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 158.3,
-      "stop": 163.9,
-      "target": 176.4,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "6770",
@@ -714,25 +714,25 @@
       "ma20": 57.71,
       "vs5": -4.4,
       "vs20": 1.4,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 44.1,
       "D": 58.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 58.8,
-      "stop": 60.0,
-      "target": 65.5,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "6239",
@@ -743,25 +743,25 @@
       "ma20": 223.35,
       "vs5": -4.3,
       "vs20": 1.6,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 58.2,
       "D": 61.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 228.1,
-      "stop": 232.5,
-      "target": 254.2,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "6223",
@@ -772,25 +772,25 @@
       "ma20": 5212.0,
       "vs5": -3.8,
       "vs20": 9.9,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 67.6,
       "D": 72.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 5758.6,
-      "stop": 5834.9,
-      "target": 6417.6,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "6271",
@@ -801,25 +801,25 @@
       "ma20": 179.8,
       "vs5": -0.4,
       "vs20": 0.7,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 54.9,
       "D": 59.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 181.9,
-      "stop": 178.1,
-      "target": 202.7,
-      "rr": 5.5,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "3374",
@@ -830,25 +830,25 @@
       "ma20": 220.2,
       "vs5": -6.1,
       "vs20": 7.6,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 66.2,
       "D": 72.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 238.2,
-      "stop": 247.4,
-      "target": 265.4,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "3583",
@@ -859,25 +859,25 @@
       "ma20": 834.05,
       "vs5": -7.0,
       "vs20": 1.0,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 53.4,
       "D": 64.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 846.2,
-      "stop": 886.9,
-      "target": 943.0,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "2421",
@@ -888,25 +888,25 @@
       "ma20": 146.03,
       "vs5": 1.0,
       "vs20": -0.7,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 28.8,
       "D": 31.5,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 145.7,
-      "stop": 140.6,
-      "target": 162.4,
-      "rr": 3.3,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "3338",
@@ -917,25 +917,25 @@
       "ma20": 74.8,
       "vs5": 1.1,
       "vs20": -1.9,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 48.9,
       "D": 35.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 73.8,
-      "stop": 71.1,
-      "target": 82.2,
-      "rr": 3.1,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "1597",
@@ -946,25 +946,25 @@
       "ma20": 155.0,
       "vs5": -2.2,
       "vs20": 15.8,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 63.9,
       "D": 74.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 180.4,
-      "stop": 179.8,
-      "target": 201.0,
-      "rr": 34.3,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "8210",
@@ -975,25 +975,25 @@
       "ma20": 1280.25,
       "vs5": -6.6,
       "vs20": 3.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 50.6,
       "D": 65.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 1331.6,
-      "stop": 1390.6,
-      "target": 1484.0,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "5215",
@@ -1004,25 +1004,25 @@
       "ma20": 39.93,
       "vs5": -0.0,
       "vs20": 12.7,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 59.0,
       "D": 60.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 45.2,
-      "stop": 44.1,
-      "target": 50.4,
-      "rr": 4.7,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "5289",
@@ -1033,25 +1033,25 @@
       "ma20": 1471.75,
       "vs5": -3.7,
       "vs20": 17.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 72.7,
       "D": 80.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 1738.6,
-      "stop": 1761.1,
-      "target": 1937.6,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "6274",
@@ -1062,25 +1062,25 @@
       "ma20": 1196.35,
       "vs5": -8.4,
       "vs20": 2.4,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 45.0,
       "D": 67.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 1231.1,
-      "stop": 1311.2,
-      "target": 1372.0,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "4958",
@@ -1091,25 +1091,25 @@
       "ma20": 392.7,
       "vs5": -1.7,
       "vs20": 4.0,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 37.1,
       "D": 48.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 410.5,
-      "stop": 407.1,
-      "target": 457.5,
-      "rr": 13.8,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2344",
@@ -1120,25 +1120,25 @@
       "ma20": 106.29,
       "vs5": -7.3,
       "vs20": 10.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 72.4,
       "D": 82.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 118.1,
-      "stop": 124.2,
-      "target": 131.6,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "2408",
@@ -1149,25 +1149,25 @@
       "ma20": 263.95,
       "vs5": -11.6,
       "vs20": 4.0,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 52.5,
       "D": 71.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 275.9,
-      "stop": 304.4,
-      "target": 307.4,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "3006",
@@ -1178,25 +1178,25 @@
       "ma20": 196.22,
       "vs5": -1.1,
       "vs20": 20.3,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 80.4,
       "D": 84.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 237.2,
-      "stop": 233.9,
-      "target": 264.3,
-      "rr": 8.2,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "8299",
@@ -1207,25 +1207,25 @@
       "ma20": 2235.75,
       "vs5": -7.7,
       "vs20": 10.3,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 66.9,
       "D": 79.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 2477.3,
-      "stop": 2616.6,
-      "target": 2760.8,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "2451",
@@ -1236,25 +1236,25 @@
       "ma20": 294.27,
       "vs5": -6.7,
       "vs20": 4.2,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 53.8,
       "D": 69.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 308.0,
-      "stop": 321.9,
-      "target": 343.3,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "4908",
@@ -1265,25 +1265,25 @@
       "ma20": 217.65,
       "vs5": -2.2,
       "vs20": 6.4,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 40.7,
       "D": 48.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 232.7,
-      "stop": 232.0,
-      "target": 259.3,
-      "rr": 38.0,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "6426",
@@ -1294,25 +1294,25 @@
       "ma20": 243.3,
       "vs5": -4.9,
       "vs20": 3.8,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 54.2,
       "D": 63.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 253.8,
-      "stop": 260.3,
-      "target": 282.8,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "3450",
@@ -1323,25 +1323,25 @@
       "ma20": 369.68,
       "vs5": -4.8,
       "vs20": 6.2,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 58.3,
       "D": 67.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 394.5,
-      "stop": 404.0,
-      "target": 439.6,
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
       "rr": 0,
-      "score": 3
+      "score": 1
     },
     {
       "code": "2301",
@@ -1352,25 +1352,25 @@
       "ma20": 189.72,
       "vs5": -0.4,
       "vs20": 8.8,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 48.8,
       "D": 59.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 207.5,
-      "stop": 203.3,
-      "target": 231.3,
-      "rr": 5.7,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2884",
@@ -1381,25 +1381,25 @@
       "ma20": 32.15,
       "vs5": 0.4,
       "vs20": -0.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 42.2,
       "D": 45.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 32.2,
-      "stop": 31.2,
-      "target": 35.8,
-      "rr": 3.6,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2892",
@@ -1410,25 +1410,25 @@
       "ma20": 28.85,
       "vs5": -0.7,
       "vs20": 0.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 48.5,
       "D": 63.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 29.1,
-      "stop": 28.6,
-      "target": 32.5,
-      "rr": 6.8,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2885",
@@ -1439,25 +1439,25 @@
       "ma20": 53.61,
       "vs5": -0.6,
       "vs20": 2.0,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 38.0,
       "D": 54.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 55.0,
-      "stop": 53.9,
-      "target": 61.3,
-      "rr": 5.7,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "5880",
@@ -1468,25 +1468,25 @@
       "ma20": 22.98,
       "vs5": 0.0,
       "vs20": -0.8,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 19.3,
       "D": 20.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 22.9,
-      "stop": 22.3,
-      "target": 25.5,
-      "rr": 4.3,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "2883",
@@ -1497,25 +1497,25 @@
       "ma20": 21.55,
       "vs5": -0.6,
       "vs20": 0.5,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 26.7,
       "D": 41.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 21.8,
-      "stop": 21.3,
-      "target": 24.2,
-      "rr": 4.8,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "3376",
@@ -1526,25 +1526,25 @@
       "ma20": 207.12,
       "vs5": 2.4,
       "vs20": -1.3,
-      "signal": "watch",
+      "signal": "exit",
       "kd": false,
       "K": 36.1,
       "D": 27.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
-      "entry": 205.5,
-      "stop": 195.8,
-      "target": 229.0,
-      "rr": 2.4,
-      "score": 3
+      "chipNow": 30,
+      "chipDelta": 0,
+      "entry": 0,
+      "stop": 0,
+      "target": 0,
+      "rr": 0,
+      "score": 1
     },
     {
       "code": "3231",
@@ -1561,19 +1561,19 @@
       "D": 30.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6669",
@@ -1590,19 +1590,19 @@
       "D": 59.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2382",
@@ -1619,19 +1619,19 @@
       "D": 38.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2324",
@@ -1648,19 +1648,19 @@
       "D": 34.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3706",
@@ -1677,19 +1677,19 @@
       "D": 31.5,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "4938",
@@ -1706,19 +1706,19 @@
       "D": 23.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2352",
@@ -1735,19 +1735,19 @@
       "D": 54.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2330",
@@ -1764,19 +1764,19 @@
       "D": 43.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3661",
@@ -1793,19 +1793,19 @@
       "D": 51.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3443",
@@ -1822,19 +1822,19 @@
       "D": 50.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6533",
@@ -1851,19 +1851,19 @@
       "D": 29.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6643",
@@ -1880,19 +1880,19 @@
       "D": 45.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3529",
@@ -1909,19 +1909,19 @@
       "D": 25.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3711",
@@ -1938,19 +1938,19 @@
       "D": 50.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2449",
@@ -1967,19 +1967,19 @@
       "D": 23.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3264",
@@ -1996,19 +1996,19 @@
       "D": 50.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6515",
@@ -2025,19 +2025,19 @@
       "D": 34.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "8150",
@@ -2054,19 +2054,19 @@
       "D": 39.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "8110",
@@ -2083,19 +2083,19 @@
       "D": 47.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3131",
@@ -2112,19 +2112,19 @@
       "D": 34.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6187",
@@ -2141,19 +2141,19 @@
       "D": 32.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3413",
@@ -2170,19 +2170,19 @@
       "D": 56.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6788",
@@ -2199,19 +2199,19 @@
       "D": 33.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "5498",
@@ -2228,19 +2228,19 @@
       "D": 27.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1815",
@@ -2257,19 +2257,19 @@
       "D": 18.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "8021",
@@ -2286,19 +2286,19 @@
       "D": 50.5,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "4755",
@@ -2315,19 +2315,19 @@
       "D": 12.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3017",
@@ -2344,19 +2344,19 @@
       "D": 27.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3324",
@@ -2373,19 +2373,19 @@
       "D": 14.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3653",
@@ -2402,19 +2402,19 @@
       "D": 11.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6230",
@@ -2431,19 +2431,19 @@
       "D": 8.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2059",
@@ -2460,19 +2460,19 @@
       "D": 63.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3533",
@@ -2489,19 +2489,19 @@
       "D": 34.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3005",
@@ -2518,19 +2518,19 @@
       "D": 40.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2474",
@@ -2547,19 +2547,19 @@
       "D": 10.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6117",
@@ -2576,19 +2576,19 @@
       "D": 22.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3013",
@@ -2605,19 +2605,19 @@
       "D": 22.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2383",
@@ -2634,19 +2634,19 @@
       "D": 52.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2368",
@@ -2663,19 +2663,19 @@
       "D": 33.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "8046",
@@ -2692,19 +2692,19 @@
       "D": 20.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3037",
@@ -2721,19 +2721,19 @@
       "D": 42.6,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "5439",
@@ -2750,19 +2750,19 @@
       "D": 32.5,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2337",
@@ -2779,19 +2779,19 @@
       "D": 46.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3260",
@@ -2808,19 +2808,19 @@
       "D": 25.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "4967",
@@ -2837,19 +2837,19 @@
       "D": 27.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "8088",
@@ -2866,19 +2866,19 @@
       "D": 45.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3051",
@@ -2895,19 +2895,19 @@
       "D": 23.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3081",
@@ -2924,19 +2924,19 @@
       "D": 49.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "4979",
@@ -2953,19 +2953,19 @@
       "D": 27.4,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3163",
@@ -2982,19 +2982,19 @@
       "D": 15.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "3363",
@@ -3011,19 +3011,19 @@
       "D": 46.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6442",
@@ -3040,19 +3040,19 @@
       "D": 26.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "4977",
@@ -3069,19 +3069,19 @@
       "D": 38.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2308",
@@ -3098,19 +3098,19 @@
       "D": 26.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1503",
@@ -3127,19 +3127,19 @@
       "D": 34.9,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1513",
@@ -3156,19 +3156,19 @@
       "D": 34.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1519",
@@ -3185,19 +3185,19 @@
       "D": 27.8,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1514",
@@ -3214,19 +3214,19 @@
       "D": 35.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6806",
@@ -3243,19 +3243,19 @@
       "D": 8.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2457",
@@ -3272,19 +3272,19 @@
       "D": 43.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "6409",
@@ -3301,19 +3301,19 @@
       "D": 19.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2880",
@@ -3330,19 +3330,19 @@
       "D": 26.0,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1101",
@@ -3359,19 +3359,19 @@
       "D": 35.3,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1301",
@@ -3388,19 +3388,19 @@
       "D": 11.1,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "1802",
@@ -3417,19 +3417,19 @@
       "D": 30.2,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2603",
@@ -3446,19 +3446,19 @@
       "D": 45.7,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     },
     {
       "code": "2201",
@@ -3475,19 +3475,19 @@
       "D": 34.5,
       "buyDays": 0,
       "chipTrend": [
-        55,
-        57,
-        59,
-        61,
-        63
+        30,
+        30,
+        30,
+        30,
+        30
       ],
-      "chipNow": 63,
-      "chipDelta": 4,
+      "chipNow": 30,
+      "chipDelta": 0,
       "entry": 0,
       "stop": 0,
       "target": 0,
       "rr": 0,
-      "score": 2
+      "score": 0
     }
   ]
 }
