@@ -140,16 +140,22 @@ def kd_cross(closes, highs, lows):
 
 def classify(price, ma5, ma20, buy_days, chip_trend, chip_delta, cross, K, D):
     s = 0
-    if price > ma5 > 0:     s += 1
-    if price > ma20 > 0:    s += 1
-    if buy_days >= 3:       s += 2
-    elif buy_days >= 1:     s += 1
-    if chip_trend[-1] > 40: s += 1   # 外資持股>40%為高
-    if chip_delta > 1:      s += 1   # 外資持股上升
-    if cross:               s += 2
-    if buy_days <= -3 and chip_delta < -2: return "exit", min(s,5)
-    if s >= 5: return "buy",   min(s,5)
-    if s >= 3: return "watch", min(s,5)
+    # 技術面
+    if price > ma5 > 0:                    s += 1  # 站上5日線
+    if price > ma20 > 0:                   s += 1  # 站上20日線
+    if (price - ma20) / ma20 * 100 > 5:   s += 1  # 突破20日線超過5%，有力道
+    # 法人面
+    if buy_days >= 3:                      s += 2  # 外資連買3日以上
+    elif buy_days >= 1:                    s += 1  # 外資開始買
+    # KD 指標
+    if cross:                              s += 2  # KD黃金交叉（最強訊號）
+    elif K < 50 and K > D:                s += 1  # KD未過熱但向上
+    # 出場條件（負訊號優先判斷）
+    if buy_days <= -3:                     return "exit", min(s,5)
+    if price < ma20 and buy_days < 0:     return "exit", min(s,5)
+    # 買進/觀察門檻
+    if s >= 4: return "buy",   min(s,5)
+    if s >= 2: return "watch", min(s,5)
     return "exit", min(s,5)
 
 def main():
